@@ -464,6 +464,94 @@ overflow:visible;
 
 }
 
+  /* NOVA PRIMEIRA PÁGINA */
+
+.lead-info-box{
+  max-width:680px;
+  margin:26px auto 0;
+  padding:22px;
+  background:#f7faff;
+  border:1px solid #dce7ff;
+  border-radius:18px;
+  text-align:left;
+}
+
+.lead-info-title{
+  font-size:15px;
+  font-weight:900;
+  color:#101828;
+  margin-bottom:16px;
+}
+
+.lead-info-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px 20px;
+  font-size:14px;
+  font-weight:700;
+  color:#344054;
+}
+
+.highlight-box{
+  max-width:680px;
+  margin:18px auto 0;
+  padding:18px 20px;
+  background:linear-gradient(135deg,#0968f5,#034ec3);
+  color:#fff;
+  border-radius:16px;
+  font-size:16px;
+  line-height:1.55;
+  box-shadow:0 10px 25px rgba(9,104,245,.16);
+}
+
+.authority-box{
+  max-width:680px;
+  margin:25px auto 0;
+  padding:20px;
+  background:#fff;
+  border:1px solid #eaecf0;
+  border-radius:16px;
+  color:#667085;
+  font-size:14px;
+  line-height:1.65;
+}
+
+.authority-box strong{
+  color:#101828;
+}
+
+
+/* CELULAR */
+
+@media(max-width:680px){
+
+  .lead-info-box{
+    margin-top:22px;
+    padding:18px 16px;
+  }
+
+  .lead-info-title{
+    font-size:14px;
+  }
+
+  .lead-info-grid{
+    grid-template-columns:1fr;
+    gap:11px;
+    font-size:14px;
+  }
+
+  .highlight-box{
+    padding:16px;
+    font-size:14px;
+    line-height:1.5;
+  }
+
+  .authority-box{
+    padding:17px;
+    font-size:13px;
+  }
+
+}
 </style>
 </head>
 
@@ -494,114 +582,152 @@ overflow:visible;
 
 <div class="intro" id="intro">
 
-<span class="pill">
-Especialistas em Energia Solar
-</span>
+  <span class="pill">
+    EXCLUSIVO PARA EMPRESAS DE ENERGIA SOLAR
+  </span>
 
-<h1>
-Tráfego pago para quem vende energia solar.
-</h1>
+  <h1>
+    Tráfego pago para quem quer receber leads prontos para avançar no orçamento.
+  </h1>
 
-<p class="lead">
+  <p class="lead">
+    <strong>Não entregamos apenas leads ou mensagens no WhatsApp.</strong>
+    <br><br>
 
-<strong>
-Há mais de 5 anos atuando 100% focados no mercado solar.
-</strong>
-
-<br><br>
-
-Não somos uma agência tentando entender como funciona o seu negócio.
-
-Nossa fundadora já atuou diretamente com vendas de energia solar e hoje usamos essa experiência para trabalhar
-
-<strong>
-da captação do lead à conversão em vendas.
-</strong>
-
-</p>
+    Criamos a captação para o lead chegar com
+    <strong>as informações que sua equipe precisa para gerar o orçamento e fechar contrato.</strong>
+  </p>
 
 
-<div class="resultados-section">
+  <!-- INFORMAÇÕES DO LEAD -->
 
-<h3>
-Resultados de clientes ↓
-</h3>
+  <div class="lead-info-box">
+
+    <div class="lead-info-title">
+      O lead já chega com informações para gerar o orçamento:
+    </div>
+
+    <div class="lead-info-grid">
+
+      <div>✓ Consumo real de energia</div>
+      <div>✓ Tipo de telhado</div>
+      <div>✓ Cidade do cliente</div>
+      <div>✓ Forma de pagamento</div>
+      <div>✓ Telefone para contato</div>
+      <div>✓ Dados necessários para gerar o orçamento</div>
+
+    </div>
+
+  </div>
 
 
-<div class="resultados-carousel" id="resultadosCarousel">
+  <!-- DESTAQUE -->
 
-<div class="resultado-slide">
+  <div class="highlight-box">
+    <strong>Menos tempo qualificando e correndo atrás de informações.</strong>
+    <br>
+    Mais oportunidades prontas para o seu comercial gerar orçamento e vender.
+  </div>
 
-<img
-src="1.png"
-alt="Cliente com 8 vendas fechadas">
 
-<div class="resultado-titulo">
-8 vendas fechadas
+  <!-- RESULTADOS -->
+
+  <div class="resultados-section">
+
+    <h3>Resultados de clientes ↓</h3>
+
+    <div class="resultados-carousel" id="resultadosCarousel">
+
+      <div class="resultado-slide">
+
+        <img
+          src="1.png"
+          alt="Resultado de cliente">
+
+        <div class="resultado-titulo">
+          8 vendas fechadas
+        </div>
+
+      </div>
+
+
+      <div class="resultado-slide">
+
+        <img
+          src="2.png"
+          alt="Resultado de cliente">
+
+        <div class="resultado-titulo">
+          5 usinas vendidas em um mês
+        </div>
+
+      </div>
+
+
+      <div class="resultado-slide">
+
+        <img
+          src="3.png"
+          alt="Resultado de cliente">
+
+        <div class="resultado-titulo">
+          4 vendas vindas do tráfego pago
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="carousel-dots">
+      <span class="carousel-dot active"></span>
+      <span class="carousel-dot"></span>
+      <span class="carousel-dot"></span>
+    </div>
+
+    <div class="carousel-dica">
+      Deslize para ver mais →
+    </div>
+
+  </div>
+
+
+  <!-- AUTORIDADE -->
+
+  <div class="authority-box">
+
+    <strong>
+      Há mais de 5 anos atuando 100% focados no mercado solar.
+    </strong>
+
+    <br><br>
+
+    Nossa fundadora já atuou diretamente com vendas de energia solar.
+
+    Por isso, nossa estratégia não termina no anúncio:
+    pensamos na jornada
+    <strong>da captação do lead até a oportunidade chegar ao seu comercial.</strong>
+
+  </div>
+
+
+  <!-- CTA -->
+
+  <button
+    class="start"
+    id="start"
+    type="button">
+
+    QUERO RECEBER LEADS ASSIM →
+
+  </button>
+
+
+  <div class="micro">
+    Responda algumas perguntas rápidas e veja se nossa estratégia faz sentido para sua empresa.
+  </div>
+
 </div>
-
-</div>
-
-
-<div class="resultado-slide">
-
-<img
-src="2.png"
-alt="Cliente com 5 usinas vendidas">
-
-<div class="resultado-titulo">
-5 usinas vendidas em um mês
-</div>
-
-</div>
-
-
-<div class="resultado-slide">
-
-<img
-src="3.png"
-alt="Cliente com 4 vendas vindas do tráfego pago">
-
-<div class="resultado-titulo">
-4 vendas vindas do tráfego pago
-</div>
-
-</div>
-
-</div>
-
-
-<div class="carousel-dots">
-
-<span class="carousel-dot active"></span>
-<span class="carousel-dot"></span>
-<span class="carousel-dot"></span>
-
-</div>
-
-<div class="carousel-dica">
-Deslize para ver mais →
-</div>
-
-</div>
-
-
-<button
-class="start"
-id="start"
-type="button">
-
-QUERO ESCALAR MINHAS VENDAS →
-
-</button>
-
-
-<div class="micro">
-Responda 7 perguntas rápidas e, ao final, escolha um horário.
-</div>
-
-</div>
-
 
 <!-- FORMULÁRIO -->
 
