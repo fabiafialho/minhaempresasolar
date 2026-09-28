@@ -1,0 +1,124 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Máquina de Orçamentos Solar</title>
+<style>
+:root{--n:#071d2d;--n2:#0d3550;--y:#ffb800;--o:#ff7a00;--s:#f4f7fa;--t:#15232d;--m:#60717d}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--t)}.w{width:min(1100px,calc(100% - 34px));margin:auto}section{padding:80px 0}
+.hero,.dark,.offer,.final{background:linear-gradient(135deg,var(--n),var(--n2));color:white}.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:45px;align-items:center}
+h1{font-size:58px;line-height:1.02;margin:18px 0}h1 span{color:var(--y)}h2{font-size:40px;line-height:1.1;margin:10px 0 18px}.lead{font-size:18px;line-height:1.6;color:var(--m)}.hero .lead,.dark .lead,.offer .lead{color:#d5e1e8}
+.tag{font-size:12px;font-weight:900;color:var(--o);text-transform:uppercase;letter-spacing:1px}.hero .tag{color:var(--y)}.btn{display:inline-block;background:var(--y);color:#101820;text-decoration:none;font-weight:900;padding:18px 24px;border-radius:12px;margin-top:15px}
+
+.hero-proofs{min-width:0}
+.proof-track{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:start}
+.proof-shot{margin:0;background:#fff;border-radius:18px;padding:7px;box-shadow:0 22px 55px #0005;overflow:hidden}
+.proof-shot:nth-child(2){transform:translateY(24px)}
+.proof-shot img{display:block;width:100%;height:430px;object-fit:cover;object-position:top;border-radius:13px}
+.proof-dots{display:none}
+
+.phone,.card,.price{background:white;color:var(--t);border-radius:20px;padding:26px;box-shadow:0 12px 35px #0001}.phone{box-shadow:0 25px 60px #0005}.notice{background:var(--s);border-radius:16px;padding:18px;line-height:1.75}.notice b:first-child{color:#15935e}
+.soft{background:var(--s)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}.card b{display:block;font-size:22px;margin-bottom:9px;color:var(--n)}.compare{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}.compare>div{padding:28px;border-radius:18px}.bad{background:#12334a}.good{background:white;color:var(--t)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:30px}.step{border-top:4px solid var(--y)}.center{text-align:center}.center .lead{margin:auto}.anchor{max-width:850px;margin:auto;text-align:center;border:2px solid var(--y);border-radius:22px;padding:38px}.price{max-width:620px;margin:30px auto;text-align:center}.amount{font-size:44px;font-weight:900;margin:18px}.faq details{padding:20px 0;border-bottom:1px solid #dde5ea}.faq summary{font-weight:900;font-size:18px}.final{text-align:center}
+@media(max-width:760px){
+section{padding:55px 0}.grid,.compare{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}h1{font-size:40px}h2{font-size:32px}
+.hero-proofs{width:100%;overflow:hidden;margin-top:8px}
+.proof-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:5px 2px 15px;scrollbar-width:none}
+.proof-track::-webkit-scrollbar{display:none}
+.proof-shot{flex:0 0 100%;scroll-snap-align:center;padding:6px;transform:none!important}
+.proof-shot img{height:auto;max-height:570px;object-fit:contain;background:#fff}
+.proof-dots{display:flex;justify-content:center;gap:7px;margin-top:2px}
+.proof-dots span{width:7px;height:7px;border-radius:50%;background:#ffffff55}
+.proof-dots span:first-child{background:var(--y)}
+}
+</style>
+<style>
+.structure-visual{margin:34px 0 8px}
+.structure-visual img{display:block;width:100%;border-radius:22px;box-shadow:0 18px 45px #0002}
+.offer-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;align-items:stretch;margin-top:32px}
+.offer-mockup{background:linear-gradient(145deg,#0b2940,#154b6c);border-radius:24px;padding:28px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.offer-mockup img{width:100%;border-radius:16px;box-shadow:0 18px 45px #0005}
+.offer-card{background:#fff;color:var(--t);border-radius:24px;padding:34px;text-align:left}
+.offer-card .amount{text-align:left;margin:8px 0 18px}
+.offer-card .old-price{text-align:left;margin:18px 0 0}
+.offer-list{display:grid;gap:12px;margin:22px 0 6px;padding:0;list-style:none}
+.offer-list li{background:#f5f8fa;border:1px solid #e3e9ed;border-radius:12px;padding:13px 14px;font-size:15px;line-height:1.35}
+.offer-list strong{color:var(--n)}
+.offer-card .btn{display:block;text-align:center;margin-top:24px}
+.offer-note{font-size:12px;color:#71808b;text-align:center;margin-top:12px}
+@media(max-width:760px){
+.offer-wrap{grid-template-columns:1fr}
+.offer-mockup{padding:16px}
+.offer-card{padding:25px 20px}
+}
+</style>
+</head><body>
+<section class="hero"><div class="w"><div class="hero-copy"><div class="tag">Para empresas de energia solar</div><h1>Pare de pagar para <span>encher seu WhatsApp de curiosos.</span></h1><p class="lead">Copie a estrutura que eu uso para fazer o potencial cliente avançar antes de chegar ao seu WhatsApp — e receba oportunidades com as informações necessárias para gerar o orçamento, sem passar o dia qualificando contato por contato.</p></div>
+<div class="hero-proofs" aria-label="Exemplos reais de leads recebidos">
+  <div class="proof-track">
+    <figure class="proof-shot"><img src="prova-leads-1.jpeg" alt="Exemplo real de leads solares recebidos no WhatsApp"></figure>
+    <figure class="proof-shot"><img src="prova-leads-2.jpeg" alt="Exemplo real de leads solares recebidos no WhatsApp"></figure>
+    <figure class="proof-shot"><img src="prova-leads-3.jpeg" alt="Exemplo real de leads solares recebidos no WhatsApp"></figure>
+  </div>
+  <div class="proof-dots"><span></span><span></span><span></span></div>
+</div>
+<a class="btn" href="#oferta">QUERO COPIAR ESSA ESTRUTURA →</a>
+</div></section>
+<section class="soft"><div class="w center"><h2>Uma estrutura pensada por quem conhece a venda de energia solar.</h2><p class="lead">Não nasceu da teoria. A lógica vem da rotina real de captação e venda no mercado solar.</p><div class="cards"><div class="card"><b>+10 projetos</b>fechados em 30 dias com tráfego pago.</div><div class="card"><b>R$ 240 mil</b>em projetos vendidos em 30 dias.</div><div class="card"><b>Foco em Solar</b>estrutura específica para integradoras.</div></div></div></section>
+<section><div class="w"><h2>Seu WhatsApp pode estar virando mais trabalho, não mais vendas.</h2><div class="cards"><div class="card"><b>📲 WhatsApp cheio</b>Você começa praticamente do zero com cada contato.</div><div class="card"><b>👻 Lead que some</b>Pergunta consumo, cidade, telhado… e ele desaparece.</div><div class="card"><b>⏱️ Falta de tempo</b>Você vende, visita, orça e ainda tenta qualificar todo mundo.</div></div></div></section>
+<section class="dark"><div class="w"><div class="grid"><div><h2>Em vez de você correr atrás das informações, a estrutura coleta antes.</h2><p class="lead">O potencial cliente avança por uma jornada que coleta os dados importantes antes de consumir seu tempo.</p></div><div class="phone"><b>🔔 Nova notificação</b><div class="notice"><b>🚨 NOVO ORÇAMENTO SOLAR</b><br>👤 João Silva<br>📱 (31) 99999-9999<br>⚡ Consumo: R$ 650/mês<br>🏠 Telhado: Cerâmico<br>📍 Belo Horizonte<br>💳 Financiamento</div></div></div><div class="compare"><div class="bad"><h3>❌ Antes</h3>“Tenho interesse.”<br><br>Quanto paga de luz?<br>Qual sua cidade?<br>Qual o telhado?<br>Como pretende pagar?<br><br>...e muitas vezes ele some.</div><div class="good"><h3>✓ Depois</h3>Consumo ✓<br>Cidade ✓<br>Telhado ✓<br>Pagamento ✓<br>Telefone ✓<br><br><b>Você recebe a oportunidade e avança para o orçamento.</b></div></div></div></section>
+<section><div class="w center"><h2>Uma jornada simples para o cliente. Menos trabalho para você.</h2><div class="steps"><div class="card step"><b>01. Ele entra</b>Chega à sua estrutura.</div><div class="card step"><b>02. Responde</b>Informa os dados necessários.</div><div class="card step"><b>03. A estrutura organiza</b>As respostas são registradas.</div><div class="card step"><b>04. Você recebe</b>Uma oportunidade mais avançada.</div></div></div></section>
+<section class="soft"><div class="w"><h2>Receba a estrutura pronta. Copie, personalize e coloque no ar.</h2>
+<div class="structure-visual"><img src="estrutura-orcamento-solar.png" alt="Estrutura de captação solar com página, notificação no celular e dados organizados"></div>
+<div class="cards"><div class="card"><b>🖥️ Página Orçamento Solar</b>Uma página pronta para apresentar sua empresa e conduzir o cliente até a solicitação de orçamento.</div><div class="card"><b>🧭 Funil Cliente Pronto</b>A jornada que coleta consumo, cidade, telhado, pagamento e os dados que você precisa antes de atender.</div><div class="card"><b>🔔 Alerta de Novo Orçamento</b>Seja avisado no celular quando uma nova oportunidade concluir o processo.</div><div class="card"><b>🎯 Captação Inteligente</b>Estrutura preparada para acompanhar quem apenas visita, quem avança e quem conclui a solicitação.</div><div class="card"><b>📊 Central de Oportunidades</b>Todos os dados dos potenciais clientes organizados automaticamente para você não perder oportunidades.</div><div class="card"><b>🎥 Método Copie e Coloque no Ar</b>Aulas diretas mostrando como personalizar e publicar a estrutura sem precisar construir tudo do zero.</div></div></div></section>
+<section><div class="w"><h2>Para o integrador que precisa vender sem virar atendente de WhatsApp.</h2><div class="cards"><div class="card"><b>Trabalha sozinho?</b>Proteja seu tempo para orçamento, visita e venda.</div><div class="card"><b>Recebe contatos?</b>Evite gastar tanto tempo coletando informação básica.</div><div class="card"><b>Quer estruturar a captação?</b>Faça o potencial cliente avançar antes de chegar até você.</div></div></div></section>
+<section class="soft"><div class="w"><div class="anchor"><h2>Quanto vale uma hora sua?</h2><p class="lead">Agora multiplique pelas horas gastas toda semana perguntando consumo, cidade, telhado e forma de pagamento para contatos que desaparecem.</p><h3>A estrutura existe para fazer parte desse trabalho antes de o lead chegar até você.</h3></div></div></section>
+<section class="offer" id="oferta">
+<div class="w">
+  <div class="center">
+    <h2>Receba a estrutura que transforma um simples contato em uma oportunidade muito mais pronta para orçamento.</h2>
+    <p class="lead">Você não recebe só aulas. Recebe a estrutura para copiar, adaptar à sua empresa e colocar para trabalhar na sua captação.</p>
+  </div>
+
+  <div class="offer-wrap">
+    <div class="offer-mockup">
+      <img src="estrutura-orcamento-solar.png" alt="Mockup da estrutura completa de captação para energia solar">
+    </div>
+
+    <div class="offer-card">
+      <b>VOCÊ RECEBE ACESSO COMPLETO:</b>
+      <ul class="offer-list">
+        <li>✓ <strong>Página Orçamento Solar</strong> — pronta para adaptar à sua empresa.</li>
+        <li>✓ <strong>Funil Cliente Pronto</strong> — coleta os dados importantes antes do atendimento.</li>
+        <li>✓ <strong>Alerta de Novo Orçamento</strong> — saiba quando uma nova oportunidade chegar.</li>
+        <li>✓ <strong>Captação Inteligente</strong> — estrutura preparada para acompanhar os avanços do potencial cliente.</li>
+        <li>✓ <strong>Central de Oportunidades</strong> — dados organizados para você não perder contatos.</li>
+        <li>✓ <strong>Método Copie e Coloque no Ar</strong> — aulas diretas de personalização e publicação.</li>
+      </ul>
+
+      <div class="old-price">de R$ 149,00</div>
+      <div class="amount">R$ 67,00</div>
+      <p><b>Pagamento único.</b> Sem mensalidade para acessar o material.</p>
+      <a class="btn" href="#">QUERO COPIAR A ESTRUTURA →</a>
+      <div class="offer-note">Acesso à estrutura + materiais + aulas de implementação.</div>
+    </div>
+  </div>
+</div>
+</section>
+<section><div class="w serious-copy"><h2>Isso não transforma qualquer contato em comprador.</h2><p class="lead">A estrutura não promete venda automática. Ela reduz trabalho manual e faz o potencial cliente chegar com mais contexto para você avançar no orçamento.</p><h3 style="font-size:25px;margin-top:26px">Você continua fazendo o que importa: proposta, negociação e fechamento.</h3></div></section>
+<section class="soft"><div class="w grid"><div><img class="author-photo" src="fabia-solar.jpg" alt="Criadora da estrutura em instalação de energia solar"></div><div><h2>Construída por quem já esteve dos dois lados.</h2><p class="lead">Antes de trabalhar exclusivamente com marketing para energia solar, eu também vendi sistemas. A estrutura foi pensada a partir da rotina comercial real e do que precisamos saber para avançar um orçamento.</p></div></div></section>
+<section class="faq"><div class="w"><div class="center"><h2>Você não precisa de mais mensagens. Precisa de uma captação mais inteligente.</h2></div><details><summary>Preciso saber programar?</summary><p>Não. Não. Você recebe minha estrutura pronta e aprende exatamente o que precisa trocar para adaptar à sua empresa.</p></details><details><summary>É um curso de tráfego pago?</summary><p>Não. Não. Você recebe a estrutura pronta e aprende a copiar, personalizar e colocar para funcionar.</p></details><details><summary>O lead chega vendido?</summary><p>Não. Ele chega com informações importantes para o orçamento. O fechamento continua dependendo do seu atendimento e proposta.</p></details></div></section>
+<section class="final"><div class="w"><h2>Copie a estrutura e deixe o potencial cliente fazer a primeira parte da qualificação antes de chegar até você.</h2><p>Receba oportunidades com contexto e use seu tempo para orçar, negociar e vender.</p><a class="btn" href="#oferta">QUERO COPIAR ESSA ESTRUTURA →</a></div></section>
+</body></html>
+<style>
+.hero-copy{max-width:900px}
+.hero-copy .lead{max-width:850px}
+.hero .hero-proofs{margin:34px 0 10px}
+.hero .proof-track{grid-template-columns:repeat(3,1fr);gap:18px}
+.hero .proof-shot:nth-child(2){transform:none}
+.hero .proof-shot img{height:360px;object-fit:cover;object-position:top}
+.old-price{font-size:20px;color:#8796a0;text-decoration:line-through;margin-top:16px;margin-bottom:-12px}
+.author-photo{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:20px;box-shadow:0 12px 35px #0002}
+.serious-copy{max-width:800px;margin:auto;text-align:center}
+.serious-copy .lead{margin:auto}
+@media(max-width:760px){
+.hero .proof-track{display:flex;gap:14px}
+.hero .proof-shot img{height:auto;max-height:570px;object-fit:contain}
+}
+</style>
